@@ -11,7 +11,9 @@ pipeline {
 		}
 	}
 	stage('test'){
-		sh 'grep "*2019*" date.txt'
+		steps{
+			sh 'grep "*2019*" date.txt'
+		}
 	}
     }
 }
