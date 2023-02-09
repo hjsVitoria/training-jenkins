@@ -4,6 +4,13 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+	parameters{
+		string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Qual stage?')
+	}
     stages {
+	    stage('build'){
+	    }
+	    stage('test'){
+	    }
     }
 }
