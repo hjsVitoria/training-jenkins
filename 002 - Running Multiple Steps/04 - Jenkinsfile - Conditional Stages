@@ -9,21 +9,21 @@ pipeline {
 		choice(name: 'CHOICE', choices: ['build', 'test'], description: 'Qual stage?')
 	}
     stages {
-	    stage('build'){
-	    when{
-	    	environment name: 'CHOICE', value: 'build'
-	    }
-	    steps{
-	   	 echo 'build stage'
-	    }
-	    }
-	    stage('test'){
-	    when{
-	    	environment name: 'CHOICE', value: 'test'
-	    }
-	    steps{
-	    echo 'test stage'
-	    }
-	    }
+    	stage('build'){
+		when{
+			environment name: 'CHOICE', value: 'build'
+		 }
+		steps{
+			echo 'build stage'
+		}
+   	}
+   	stage('test'){
+		when{
+			environment name: 'CHOICE', value: 'test'
+		}
+		steps{
+			echo 'test stage'
+		}
+	}
     }
 }
