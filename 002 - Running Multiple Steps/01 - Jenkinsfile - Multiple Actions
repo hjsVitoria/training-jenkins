@@ -5,5 +5,11 @@ pipeline {
 		}
 	}
     stages {
+    	stage('get-data'){
+		steps{
+			sh 'echo date > data.txt'
+			sh 'cat ficheiro.txt'
+		}
+	}
     }
 }
