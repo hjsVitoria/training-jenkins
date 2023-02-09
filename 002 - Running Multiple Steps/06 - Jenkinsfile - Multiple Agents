@@ -14,11 +14,11 @@ pipeline {
 	    stage('test') {
 		    agent {
 		    	docker{
-				image 'alpine:latest'
+				image 'node:latest'
 			}
 		    }		    
 		    steps {
-			sh 'alpine --version'
+			sh 'npm --version'
 		    }
 	    }
 	}
