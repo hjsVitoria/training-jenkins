@@ -7,8 +7,12 @@ pipeline {
     stages {
     	stage('get-data'){
 		steps{
-			sh 'echo date > data.txt'
-			sh 'cat ficheiro.txt'
+			script{
+				for(int i=0,i<3,i++){
+					sh 'echo date > data.txt'
+					sh 'cat ficheiro.txt'
+				}
+			}
 		}
 	}
     }
