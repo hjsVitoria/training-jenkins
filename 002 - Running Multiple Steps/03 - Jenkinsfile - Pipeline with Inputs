@@ -1,18 +1,22 @@
 pipeline {
-    agent { 
+    	agent { 
 		docker { 
 			image 'alpine:latest' 
 		}
 	}
+	paramenters{
+		string(name: 'NAME', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+		string(name: 'AGE', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+	}
     stages {
         stage('build') {
-		input {
-                	message "What is your name?"
-                	parameters {
-                	    string(name: 'NAME', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-			    string(name: 'AGE', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                	}
-            	}
+		//input {
+                //	message "What is your name?"
+                //	parameters {
+                //	    string(name: 'NAME', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+		//	    string(name: 'AGE', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                //	}
+            	//}
            	steps {
                 	echo "$NAME"
                 	echo "$AGE"
