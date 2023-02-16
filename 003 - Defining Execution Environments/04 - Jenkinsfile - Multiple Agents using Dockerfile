@@ -8,10 +8,14 @@ pipeline {
 		}
 	}
     stages {
-        stage('build') {
+        stage('maven') {
             steps {
-            	echo "Don't install curl here!"
-                sh "curl www.google.com"
+                sh "mvn --version"
+            }
+        }
+	stage('node') {
+            steps {
+                sh "npm --version"
             }
         }
     }
