@@ -4,6 +4,9 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+	environment{
+		NOTIFICATION-EMAIL='EMAIL'
+	}
     stages {
         stage('build') {
             steps {
