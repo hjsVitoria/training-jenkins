@@ -5,12 +5,12 @@ pipeline {
 		}
 	}
 	environment{
-		NOTIFICATION-EMAIL='EMAIL'
+		NOTIFICATION-EMAIL='BATATAS'
 	}
     stages {
         stage('build') {
             steps {
-                echo "$NOTIFICATION_EMAIL"
+                echo "${NOTIFICATION_EMAIL}"
             }
         }
     }
