@@ -5,7 +5,7 @@ pipeline {
 		}
 	}
 	environment{
-		NOTIFICATION-EMAIL='BATATAS'
+		NOTIFICATION_EMAIL='BATATAS'
 	}
     stages {
         stage('build') {
