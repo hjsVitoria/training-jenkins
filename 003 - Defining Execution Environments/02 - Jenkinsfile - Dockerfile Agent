@@ -1,5 +1,10 @@
 pipeline {
     agent { 
+   	dockerfile {
+            dir ''
+            additionalBuildArgs ''
+            args ''
+        }
 	}
     stages {
         stage('build') {
