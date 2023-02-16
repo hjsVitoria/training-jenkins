@@ -1,22 +1,33 @@
 pipeline {
-	agent {
-    		dockerfile {
-			filename '04 - Dockerfile - Multiple Agents using Dockerfile'
-			dir '003 - Defining Execution Environments'
-			additionalBuildArgs ''
-			args ''
-		}
+	agent none
+	
 	}
     stages {
         stage('maven') {
+		agent {
+			dockerfile {
+				filename '04 - Dockerfile - Multiple Agents using Dockerfile'
+				dir '003 - Defining Execution Environments'
+				additionalBuildArgs ''
+				args ''
+			}
+		}
             steps {
                 sh "mvn --version"
             }
         }
 	stage('node') {
+		agent{
+			dockerfile {
+				filename '04 - Dockerfile - Multiple Agents using Dockerfile-01'
+				dir '003 - Defining Execution Environments'
+				additionalBuildArgs ''
+				args ''
+			}
+		}
             steps {
                 sh "npm --version"
-		003 - Defining Execution Environments/04 - Dockerfile - Multiple Agents using Dockerfile-01
+		
             }
         }
     }
