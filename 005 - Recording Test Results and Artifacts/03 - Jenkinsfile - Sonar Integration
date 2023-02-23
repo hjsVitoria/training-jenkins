@@ -1,13 +1,15 @@
 pipeline {
     agent { 
-		docker { 
-			image 'alpine:latest' 
-		}
-	}
+        docker { 
+            image 'maven:3.5.2' 
+        }
+    }
     stages {
-        stage('tests') {
+        stage('build') {
             steps {
-                sh ""
+                script {
+                    sh 'mvn -f "005 - Recording Test Results and Artifacts/03 - Sonar Integration/" compile clean verify sonar:sonar -Dsonar.host.url=http://3.124.164.63:8081/about -Dsonar.projectKey=005'
+                }
             }
         }
     }
